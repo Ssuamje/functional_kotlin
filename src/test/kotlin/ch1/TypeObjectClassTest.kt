@@ -1,5 +1,7 @@
 package ch1;
 
+import io.kotest.matchers.shouldBe
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -73,5 +75,16 @@ public class TypeObjectClassTest {
 	@DisplayName("인터페이스")
 	@Test
 	fun interfaceTest() {
+		goodOrBad(100) shouldBe "Good"
+		goodOrBad(49) shouldBe "Bad"
+		goodOrBad(2147483647) shouldBe null
+	}
+
+	private fun goodOrBad(score: Int):String? {
+		return when (score) {
+			in 50..100 -> "Good"
+			in 0..49 -> "Bad"
+			else -> null
+		}
 	}
 }
