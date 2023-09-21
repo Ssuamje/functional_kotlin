@@ -5,7 +5,7 @@ plugins {
 
 group = "me.ssuamje"
 version = "1.0-SNAPSHOT"
-val kotestVersion = "5.7.2"
+val kotestVersion = "5.6.2"
 repositories {
     mavenCentral()
 }
