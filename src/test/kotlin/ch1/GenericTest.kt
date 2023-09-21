@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test
 interface Machine<T> {
     fun process(product: T)
 }
+
 class GenericTest {
     data class Dough(val ingredients:String, val product: String)
 
