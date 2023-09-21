@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 class CompanionConstructorTest {
     data class Person(val name: String, val age: Int, val sex: Sex) {
-        companion object {
+        companion object Constructor {
             fun male(name:String, age:Int): Person
                 = Person(name, age, Sex.MALE)
             fun female(name:String, age:Int): Person
@@ -25,6 +25,7 @@ class CompanionConstructorTest {
     fun test() {
         Person.male("Namja", 20).sex shouldBe Sex.MALE
         Person.female("Yeoja", 20).sex shouldNotBe Sex.MALE shouldBe Sex.FEMALE
-
+        // 아래와 같이 동반자 객체의 이름을 설정할 수도 있다.
+        Person.Constructor.female("Christine", 60).name shouldBe "Christine"
     }
 }
